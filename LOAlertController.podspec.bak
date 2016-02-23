@@ -1,0 +1,14 @@
+Pod::Spec.new do |s|
+  s.name          = "UIAlertController+LOAlertController"
+  s.version       = '0.0.27'
+  s.summary       = "LOAlertController" 
+  s.homepage      = 'https://github.com/vivalalova'
+  s.license       = { :type => 'MIT', :file => 'LICENSE' }
+  s.author        = "Lova Shih"
+  s.platform      = :ios, "8.0"
+  s.source        = { :git => "https://github.com/vivalalova/LOAlertController.git", :tag => '0.1.0' }
+  s.source_files  = "~/source/"
+  s.framework     = 'UIKit'
+  s.requires_arc  = true
+end
+

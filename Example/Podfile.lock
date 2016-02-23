@@ -1,0 +1,14 @@
+PODS:
+  - LOAlertController (0.1.0)
+
+DEPENDENCIES:
+  - LOAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  LOAlertController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LOAlertController: 3f476c53b38c7ad303fed8a03bc0b0995143e971
+
+COCOAPODS: 0.39.0
