@@ -3,7 +3,7 @@
 //  Giish
 //
 //  Created by Kuo-HsunShih on 2016/2/23.
-//  Copyright © 2016年 Gino Shen. All rights reserved.
+//  Copyright © 2016年 Lova. All rights reserved.
 //
 
 #import "UIAlertController+LOAlertController.h"
@@ -24,11 +24,21 @@
         
         [alertController addAction:alertActionOK];
     }
+    
+    
+    NSString *buttonTitle = @"Cancel";
+    UIAlertAction *alertActionOK = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action) {
+        complete(-1);
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alertController addAction:alertActionOK];
+    
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [controller presentViewController:alertController animated:YES completion:nil];
     });
     
     return alertController;
 }
-
 @end
