@@ -20,6 +20,34 @@ it, simply add the following line to your Podfile:
 pod "LOAlertController"
 ```
 
+## Getting start
+
+One method to set alertController
+
+```
+    [UIAlertController showWithController:self cancelTitle:@"cancel action title" type:UIAlertControllerStyleActionSheet title:@"title" message:@"message" buttons:@[@"action 1 title", @"action 2 title"] complete:^(NSInteger buttonIndex) {
+        //return -1 if cancel action pressed
+        if (buttonIndex == -1) {
+            return;
+        }
+        
+        //button index as bottons
+        switch (buttonIndex) {
+            case 0:
+                //to something
+                break;
+                
+            case 1:
+                //to something
+                break;
+                
+            default:
+                return;
+                break;
+        }
+    }];
+```
+
 ## Author
 
 vivalalova, vivalalova0@gmail.com
