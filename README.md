@@ -20,7 +20,15 @@ it, simply add the following line to your Podfile:
 pod "LOAlertController"
 ```
 
+
 ## Getting start
+
+
+import 
+
+```objc
+#import "UIAlertController+LOAlertController.h"
+```
 
 One method to set alertController
 
