@@ -22,9 +22,16 @@ pod "LOAlertController"
 
 ## Getting start
 
+import 
+
+```objc
+#import "UIAlertController+LOAlertController.h"
+```
+
+
 One method to set alertController
 
-```
+```objc
     [UIAlertController showWithController:self cancelTitle:@"cancel action title" type:UIAlertControllerStyleActionSheet title:@"title" message:@"message" buttons:@[@"action 1 title", @"action 2 title"] complete:^(NSInteger buttonIndex) {
         //return -1 if cancel action pressed
         if (buttonIndex == -1) {
