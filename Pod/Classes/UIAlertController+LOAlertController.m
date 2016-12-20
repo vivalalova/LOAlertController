@@ -10,25 +10,32 @@
 
 @implementation UIAlertController (LOAlertController)
 
-+ (UIAlertController *)showWithController:(UIViewController *)controller cancelTitle:(NSString *)cancelTitle type:(UIAlertControllerStyle)type title:(NSString *)title message:(NSString *)message buttons:(NSArray <NSString *> *)buttons complete:(void (^)(NSInteger buttonIndex))complete {
++ (UIAlertController *)showWithController:(nonnull UIViewController *)controller cancelTitle:(nullable NSString *)cancelTitle type:(UIAlertControllerStyle)type title:(nullable NSString *)title message:(nullable NSString *)message buttons:(nullable NSArray <NSString *> *)buttons complete:(nullable void (^)(NSInteger buttonIndex))complete {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:type];
     
-    for (int i = 0; i < buttons.count; i++) {
-        NSString *buttonTitle = buttons[i];
-        
-        UIAlertAction *alertActionOK = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
-            complete(i);
+    if (buttons) {
+        for (int i = 0; i < buttons.count; i++) {
+            NSString *buttonTitle = buttons[i];
             
-            [alertController dismissViewControllerAnimated:YES completion:nil];
-        }];
-        
-        [alertController addAction:alertActionOK];
+            UIAlertAction *alertActionOK = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+                if (complete) {
+                    complete(i);
+                }
+                
+                [alertController dismissViewControllerAnimated:YES completion:nil];
+            }];
+            
+            [alertController addAction:alertActionOK];
+        }
     }
     
     //cancel
     NSString *buttonTitle = cancelTitle ? cancelTitle : @"Cancel";
     UIAlertAction *alertActionOK = [UIAlertAction actionWithTitle:buttonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action) {
-        complete(-1);
+        if (complete) {
+            complete(-1);
+        }
+        
         [alertController dismissViewControllerAnimated:YES completion:nil];
     }];
     
