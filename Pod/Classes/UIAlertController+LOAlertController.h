@@ -10,7 +10,7 @@
 
 @interface UIAlertController (LOAlertController)
 // buttonIndex -1 == cancel
-+ (UIAlertController *)showWithController:(nonnull UIViewController *)controller
++ (nonnull UIAlertController *)showWithController:(nonnull UIViewController *)controller
                               cancelTitle:(nullable NSString *)cancelTitle
                                      type:(UIAlertControllerStyle)type
                                     title:(nullable NSString *)title
