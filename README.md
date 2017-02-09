@@ -33,12 +33,7 @@ import
 One method to set alertController
 
 ```
-    [UIAlertController showWithController:self cancelTitle:@"cancel action title" type:UIAlertControllerStyleActionSheet title:@"title" message:@"message" buttons:@[@"action 1 title", @"action 2 title"] complete:^(NSInteger buttonIndex) {
-        //return -1 if cancel action pressed
-        if (buttonIndex == -1) {
-            return;
-        }
-        
+    [UIAlertController showWithController:self cancelTitle:@"cancel action title" type:UIAlertControllerStyleActionSheet title:@"title" message:@"message" buttons:@[@"action 1 title", @"action 2 title"] complete:^(NSInteger buttonIndex) {       
         //button index as bottons
         switch (buttonIndex) {
             case 0:
@@ -50,6 +45,7 @@ One method to set alertController
                 break;
                 
             default:
+                //return -1 if cancel action pressed
                 return;
                 break;
         }
@@ -58,7 +54,7 @@ One method to set alertController
 
 ## Author
 
-vivalalova, vivalalova0@gmail.com
+vivalalova
 
 ## License
 
